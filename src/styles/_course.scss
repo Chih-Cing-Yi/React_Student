@@ -1,0 +1,40 @@
+.course {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: lightgray;
+  min-height: 89.5vh;
+
+  .course_m {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    div {
+      padding: 0.5rem;
+      height: 25vh;
+      width: 80vh;
+      background-color: white;
+      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+      border-radius: 1rem; //圓角
+      overflow: auto; //自適應顯示卷軸
+    }
+  }
+  .course_d {
+    display: flex;
+    justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+    div {
+      padding: 0.5rem;
+      height: 55vh;
+      width: 80vh;
+      background-color: white;
+      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+      border-radius: 1rem; //圓角
+      overflow: auto; //自適應顯示卷軸
+    }
+  }
+}

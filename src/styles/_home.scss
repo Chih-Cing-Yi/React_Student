@@ -1,0 +1,33 @@
+$color1: #333;
+
+.homePic {
+  .outer {
+    position: absolute; //絕對座標
+    height: 89.5vh;
+    width: 100%;
+    top: 3.5rem;
+    left: 0;
+    opacity: 0.8; //透明度
+    z-index: 1; //圖層
+  }
+  .inner {
+    position: absolute; //絕對座標
+    top: 40%;
+    left: 40%;
+    text-align: center;
+    z-index: 2; //圖層
+    //外框設定
+    padding: 2rem;
+    border-style: solid;
+    border-width: 3px;
+    border-color: $color1;
+    border-radius: 100%; //導圓角
+    background-color: white;
+    opacity: 0.8;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    color: $color1;
+    h1 {
+      font-weight: bolder;
+    }
+  }
+}

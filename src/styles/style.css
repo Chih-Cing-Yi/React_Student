@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.page {
+  background-color: lightgray;
+  height: 89.5vh;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  background-color: #333;
+}
+nav ul {
+  list-style: none;
+  overflow: hidden;
+  margin-right: 2rem;
+  margin-block: 0;
+}
+nav ul li {
+  float: left;
+}
+nav ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  background-color: #111;
+}
+
+.footer {
+  display: flex;
+  justify-content: right;
+  background-color: #333;
+  min-height: 1vh;
+}
+.footer p {
+  color: white;
+  font-size: 1rem;
+  margin-right: 2rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.homePic .outer {
+  position: absolute;
+  height: 89.5vh;
+  width: 100%;
+  top: 3.5rem;
+  left: 0;
+  opacity: 0.8;
+  z-index: 1;
+}
+.homePic .inner {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  text-align: center;
+  z-index: 2;
+  padding: 2rem;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #333;
+  border-radius: 100%;
+  background-color: white;
+  opacity: 0.8;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+.homePic .inner h1 {
+  font-weight: bolder;
+}
+
+.registerPage {
+  position: absolute;
+  top: 12rem;
+  width: 50vh;
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 5%;
+}
+.registerPage input {
+  margin-bottom: 0.5rem;
+}
+.registerPage button {
+  width: 100%;
+}
+.registerPage div {
+  display: flex;
+}
+
+.btn-group {
+  position: absolute;
+  top: 7rem;
+  width: 40vh;
+}
+
+.studentTable {
+  position: absolute;
+  top: 12rem;
+  width: 100vh;
+  padding: 1rem;
+  min-height: 60vh;
+  background-color: white;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+}
+
+.course {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: lightgray;
+  min-height: 89.5vh;
+}
+.course .course_m {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+}
+.course .course_m div {
+  padding: 0.5rem;
+  height: 25vh;
+  width: 80vh;
+  background-color: white;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  overflow: auto;
+}
+.course .course_d {
+  display: flex;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+.course .course_d div {
+  padding: 0.5rem;
+  height: 55vh;
+  width: 80vh;
+  background-color: white;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  overflow: auto;
+}/*# sourceMappingURL=style.css.map */

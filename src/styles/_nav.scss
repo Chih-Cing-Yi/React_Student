@@ -1,0 +1,25 @@
+nav {
+  background-color: #333;
+  ul {
+    list-style: none; //去掉前面的點
+    overflow: hidden; //li分成左右兩邊需要使用
+    //display: flex; //橫向排列(分成兩邊不使用)
+    //justify-content: flex-start; //左邊開始(分成兩邊不使用)
+    margin-right: 2rem; //右邊間隔
+    margin-block: 0; //下方間隔
+    li {
+      float: left; //右邊排列
+      a {
+        display: block; //區塊
+        color: white;
+        text-align: center; //文字位址
+        padding: 1rem; //字與區塊間隔
+        text-decoration: none; //去底線
+      }
+    }
+    //滑鼠移入
+    li a:hover {
+      background-color: #111;
+    }
+  }
+}

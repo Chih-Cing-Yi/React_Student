@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./page/home";
+import Student from "./page/student";
+import Error from "./page/error";
+import Register from "./page/register";
+import Login from "./page/login";
+import Course from "./page/course";
+import AuthService from "./services/AuthService";
+import "./styles/style.css";
 
 function App() {
+  let [user, setUser] = useState(AuthService.getUser());
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout user={user} setUser={setUser} />}>
+            <Route index element={<Home />} />
+            <Route path="Register" element={<Register />} />
+            <Route
+              path="Login"
+              element={<Login user={user} setUser={setUser} />}
+            />
+            <Route
+              path="Student"
+              element={<Student user={user} setUser={setUser} />}
+            />
+            <Route
+              path="Course"
+              element={<Course user={user} setUser={setUser} />}
+            />
+            <Route path="*" element={<Error />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,0 +1,13 @@
+.footer {
+  display: flex; //橫排列
+  justify-content: right; //左邊開始
+  background-color: #333;
+  min-height: 1vh;
+  p {
+    color: white;
+    font-size: 1rem;
+    margin-right: 2rem; //右間隔
+    margin-top: 0.25rem; //上間隔
+    margin-bottom: 0.25rem; //下間隔
+  }
+}
