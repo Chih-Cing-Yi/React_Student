@@ -18,6 +18,15 @@ class AuthService {
   getUser() {
     return JSON.parse(localStorage.getItem("user"));
   }
+
+  //取得驗證token
+  token() {
+    if (localStorage.getItem("user")) {
+      return JSON.parse(localStorage.getItem("user")).jwt;
+    } else {
+      return "";
+    }
+  }
 }
 
 export default new AuthService();

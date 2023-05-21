@@ -8,6 +8,7 @@ const course = ({ user, setUser }) => {
   let [courseList, setCourseList] = useState([]);
   let [tableData, setTableData] = useState(""); //取得表的資料
   let [courseStudent, setCourseStudent] = useState([]); //修課人員
+
   //獲取table資料
   const getTableData = (data) => {
     console.log(data);
