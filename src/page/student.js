@@ -250,7 +250,7 @@ const student = ({ user, setUser }) => {
             className="btn btn-primary"
             data-bs-toggle="modal"
             data-bs-target="#myModal"
-            onClick={getAddItem}
+            onClick={(getAddItem, clearAll)}
           >
             <i className="fa-solid fa-plus">
               <br />
@@ -322,14 +322,14 @@ const student = ({ user, setUser }) => {
               ))}
             </tbody>
           </table>
-          {/* 建立分頁 */}
-          <Pagination
-            totalPosts={studentList.length}
-            postsPerPage={postsPerPage}
-            setCurrentPage={setCurrentPage}
-            currentPage={currentPage}
-          />
         </div>
+        {/* 建立分頁 */}
+        <Pagination
+          totalPosts={studentList.length}
+          postsPerPage={postsPerPage}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+        />
       </div>
     </div>
   );

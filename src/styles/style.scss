@@ -3,12 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .page {
   background-color: lightgray;
   height: 89.5vh;
+  padding: 2rem;
   // display: flex;
   // justify-content: center; //水平置中
   //align-items: center; //垂直置中
