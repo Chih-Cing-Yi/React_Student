@@ -13,7 +13,7 @@ const Pagination = ({
   }
 
   return (
-    <div>
+    <>
       <nav>
         <ul className="pagination">
           {pages.map((page) => (
@@ -28,7 +28,7 @@ const Pagination = ({
           ))}
         </ul>
       </nav>
-    </div>
+    </>
   );
 };
 

@@ -225,6 +225,7 @@ const student = ({ user, setUser }) => {
               <button
                 type="button"
                 className="btn btn-primary"
+                data-bs-dismiss="modal"
                 onClick={addOrEdit}
               >
                 確認
@@ -242,91 +243,93 @@ const student = ({ user, setUser }) => {
         </div>
       </div>
       {/* -------------------------------- */}
-      <div className="btn-group">
-        <button
-          type="button"
-          className="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#myModal"
-          onClick={getAddItem}
-        >
-          <i className="fa-solid fa-plus">
-            <br />
-            新增
-          </i>
-        </button>
-        <button
-          type="button"
-          className={!tableData ? "btn btn-secondary" : "btn btn-warning"}
-          data-bs-toggle="modal"
-          data-bs-target="#myModal"
-          disabled={!tableData}
-          onClick={getEditItem}
-        >
-          <i className="fa-solid fa-pen-to-square">
-            <br />
-            修改
-          </i>
-        </button>
-        <button
-          type="button"
-          className={!tableData ? "btn btn-secondary" : "btn btn-danger"}
-          disabled={!tableData}
-          onClick={delStudent}
-        >
-          <i className="fa-solid fa-trash">
-            <br />
-            刪除
-          </i>
-        </button>
-      </div>
+      <div className="studentpage">
+        <div className="btn-group">
+          <button
+            type="button"
+            className="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#myModal"
+            onClick={getAddItem}
+          >
+            <i className="fa-solid fa-plus">
+              <br />
+              新增
+            </i>
+          </button>
+          <button
+            type="button"
+            className={!tableData ? "btn btn-secondary" : "btn btn-warning"}
+            data-bs-toggle="modal"
+            data-bs-target="#myModal"
+            disabled={!tableData}
+            onClick={getEditItem}
+          >
+            <i className="fa-solid fa-pen-to-square">
+              <br />
+              修改
+            </i>
+          </button>
+          <button
+            type="button"
+            className={!tableData ? "btn btn-secondary" : "btn btn-danger"}
+            disabled={!tableData}
+            onClick={delStudent}
+          >
+            <i className="fa-solid fa-trash">
+              <br />
+              刪除
+            </i>
+          </button>
+        </div>
 
-      <div className="studentTable">
-        <table className="table table-primary">
-          <thead className="table-dark">
-            <tr>
-              <td>ID</td>
-              <td>姓名</td>
-              <td>年齡</td>
-              <td>住址</td>
-              <td>班級</td>
-            </tr>
-          </thead>
-          <tbody>
-            {/* 改成輸出分頁時的list */}
-            {currentPosts.map((data) => (
-              //設定key值才不會有錯誤訊息(不影響使用)
-              <tr
-                key={data.studentId}
-                //一定要寫成arrow function
-                onClick={() => getTableData(data)}
-              >
-                <td style={{ backgroundColor: changeColor(data) }}>
-                  {data.studentId}
-                </td>
-                <td style={{ backgroundColor: changeColor(data) }}>
-                  {data.studentName}
-                </td>
-                <td style={{ backgroundColor: changeColor(data) }}>
-                  {data.studentAge}
-                </td>
-                <td style={{ backgroundColor: changeColor(data) }}>
-                  {data.studentAddress}
-                </td>
-                <td style={{ backgroundColor: changeColor(data) }}>
-                  {data.className}
-                </td>
+        <div className="studentTable">
+          <table className="table table-primary">
+            <thead className="table-dark">
+              <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>年齡</td>
+                <td>住址</td>
+                <td>班級</td>
               </tr>
-            ))}
-          </tbody>
-        </table>
-        {/* 建立分頁 */}
-        <Pagination
-          totalPosts={studentList.length}
-          postsPerPage={postsPerPage}
-          setCurrentPage={setCurrentPage}
-          currentPage={currentPage}
-        />
+            </thead>
+            <tbody>
+              {/* 改成輸出分頁時的list */}
+              {currentPosts.map((data) => (
+                //設定key值才不會有錯誤訊息(不影響使用)
+                <tr
+                  key={data.studentId}
+                  //一定要寫成arrow function
+                  onClick={() => getTableData(data)}
+                >
+                  <td style={{ backgroundColor: changeColor(data) }}>
+                    {data.studentId}
+                  </td>
+                  <td style={{ backgroundColor: changeColor(data) }}>
+                    {data.studentName}
+                  </td>
+                  <td style={{ backgroundColor: changeColor(data) }}>
+                    {data.studentAge}
+                  </td>
+                  <td style={{ backgroundColor: changeColor(data) }}>
+                    {data.studentAddress}
+                  </td>
+                  <td style={{ backgroundColor: changeColor(data) }}>
+                    {data.className}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {/* 建立分頁 */}
+          <Pagination
+            totalPosts={studentList.length}
+            postsPerPage={postsPerPage}
+            setCurrentPage={setCurrentPage}
+            currentPage={currentPage}
+          />
+        </div>
       </div>
     </div>
   );

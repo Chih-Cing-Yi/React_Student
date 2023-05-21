@@ -5,11 +5,11 @@ import Nav from "./nav";
 
 const Layout = ({ user, setUser }) => {
   return (
-    <div>
+    <>
       <Nav user={user} setUser={setUser} />
       <Outlet />
       <Footer />
-    </div>
+    </>
   );
 };
 

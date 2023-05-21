@@ -8,8 +8,6 @@
 .page {
   background-color: lightgray;
   height: 89.5vh;
-  display: flex;
-  justify-content: center;
 }
 
 nav {
@@ -79,8 +77,7 @@ nav ul li a:hover {
 }
 
 .registerPage {
-  position: absolute;
-  top: 12rem;
+  margin: 10rem auto;
   width: 50vh;
   background-color: white;
   padding: 2rem;
@@ -97,15 +94,17 @@ nav ul li a:hover {
   display: flex;
 }
 
-.btn-group {
-  position: absolute;
-  top: 7rem;
+.studentpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+.studentpage .btn-group {
   width: 40vh;
 }
-
-.studentTable {
-  position: absolute;
-  top: 12rem;
+.studentpage .studentTable {
+  margin: 2rem;
   width: 100vh;
   padding: 1rem;
   min-height: 60vh;

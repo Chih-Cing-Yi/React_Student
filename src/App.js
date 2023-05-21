@@ -8,6 +8,8 @@ import Register from "./page/register";
 import Login from "./page/login";
 import Course from "./page/course";
 import AuthService from "./services/AuthService";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 import "./styles/style.css";
 
 function App() {

@@ -9,7 +9,7 @@ const nav = ({ user, setUser }) => {
     setUser(null);
   };
   return (
-    <div>
+    <>
       <nav>
         <ul>
           <li>
@@ -44,7 +44,7 @@ const nav = ({ user, setUser }) => {
           )}
         </ul>
       </nav>
-    </div>
+    </>
   );
 };
 
