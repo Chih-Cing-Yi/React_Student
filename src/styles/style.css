@@ -142,7 +142,7 @@ nav ul li a:hover {
   padding-bottom: 1rem;
   width: 100%;
 }
-.course .course_d div {
+.course .course_d .tableStudent {
   padding: 0.5rem;
   height: 55vh;
   width: 80vh;
@@ -150,4 +150,12 @@ nav ul li a:hover {
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
   overflow: auto;
+}
+.course .course_d .tableStudent .addStudent {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+}
+.course .course_d .tableStudent .addStudent .form-select {
+  width: 80%;
 }/*# sourceMappingURL=style.css.map */

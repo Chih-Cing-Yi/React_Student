@@ -28,6 +28,26 @@ class CourseService {
       },
     });
   }
+
+  //新增修課人員
+  AddCourse_D(courseId, studentId) {
+    //驗證token
+    let token;
+    token = AuthService.token();
+    //發送http
+    return axios.post(
+      API_URL,
+      {
+        courseId,
+        studentId,
+      },
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    );
+  }
 }
 
 export default new CourseService();

@@ -27,7 +27,7 @@
     padding-right: 1rem;
     padding-bottom: 1rem;
     width: 100%;
-    div {
+    .tableStudent {
       padding: 0.5rem;
       height: 55vh;
       width: 80vh;
@@ -35,6 +35,14 @@
       box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
       border-radius: 1rem; //圓角
       overflow: auto; //自適應顯示卷軸
+      .addStudent {
+        display: flex;
+        justify-content: space-around;
+        padding: 0.5rem;
+        .form-select {
+          width: 80%;
+        }
+      }
     }
   }
 }

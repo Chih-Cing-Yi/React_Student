@@ -83,8 +83,8 @@ const student = ({ user, setUser }) => {
       })
       .catch((e) => {
         console.log(e.message);
-        setMessage("表單獲取失敗，請聯絡維護人員");
-        setMessageType("alert alert-danger alert-dismissible");
+        // setMessage("表單獲取失敗，請聯絡維護人員");
+        // setMessageType("alert alert-danger alert-dismissible");
       });
   };
   //http請求事件(新增或修改)
