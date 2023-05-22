@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import StudentService from "../services/StudentService";
 import Pagination from "../components/Pagination";
 import { useNavigate } from "react-router-dom";
+import Message_component from "../components/message_component";
 
 const student = ({ user, setUser }) => {
   //宣告
@@ -16,6 +17,8 @@ const student = ({ user, setUser }) => {
   let [tableData, setTableData] = useState(""); //取得表的資料
   let [classList, setClassList] = useState([]);
   let [mode, setMode] = useState("");
+  let [message, setMessage] = useState("");
+  let [messageType, setMessageType] = useState("");
   //set變數事件
   const handleStudentId = (e) => {
     setStudentId(e.target.value);
@@ -64,6 +67,7 @@ const student = ({ user, setUser }) => {
   };
   const getAddItem = () => {
     setMode(0);
+    clearAll();
   };
   //http請求事件(獲取學生列表) //並寫入到classList
   const getStudent = () => {
@@ -79,10 +83,13 @@ const student = ({ user, setUser }) => {
       })
       .catch((e) => {
         console.log(e.message);
+        setMessage("表單獲取失敗，請聯絡維護人員");
+        setMessageType("alert alert-danger alert-dismissible");
       });
   };
   //http請求事件(新增或修改)
   const addOrEdit = (e) => {
+    console.log(mode);
     if (mode == 0) {
       StudentService.addStudent(
         studentName,
@@ -94,10 +101,14 @@ const student = ({ user, setUser }) => {
           console.log(res);
           clearAll();
           getStudent();
-          window.alert("新增成功");
+          // window.alert("新增成功");
+          setMessage("新增成功");
+          setMessageType("alert alert-success alert-dismissible");
         })
         .catch((e) => {
           console.log(e.message);
+          setMessage("新增失敗");
+          setMessageType("alert alert-danger alert-dismissible");
         });
     } else if (mode == 1) {
       StudentService.editStudent(
@@ -111,10 +122,14 @@ const student = ({ user, setUser }) => {
           console.log(res);
           clearAll();
           getStudent();
-          window.alert("修改成功");
+          // window.alert("修改成功");
+          setMessage("修改成功");
+          setMessageType("alert alert-success alert-dismissible");
         })
         .catch((e) => {
           console.log(e.message);
+          setMessage("修改失敗");
+          setMessageType("alert alert-danger alert-dismissible");
         });
     }
   };
@@ -128,10 +143,14 @@ const student = ({ user, setUser }) => {
           console.log(res);
           clearAll();
           getStudent();
-          window.alert("刪除成功");
+          // window.alert("刪除成功");
+          setMessage("刪除成功");
+          setMessageType("alert alert-success alert-dismissible");
         })
         .catch((e) => {
           console.log(e.message);
+          setMessage("刪除失敗");
+          setMessageType("alert alert-danger alert-dismissible");
         });
     } else {
     }
@@ -153,6 +172,14 @@ const student = ({ user, setUser }) => {
   //顯示網頁
   return (
     <div className="page">
+      {/* 訊息彈出框 */}
+      {message && (
+        <Message_component
+          message={message}
+          messageType={messageType}
+          setMessage={setMessage}
+        />
+      )}
       {/* <!-- The Modal --> */}
       <div className="modal" id="myModal">
         <div className="modal-dialog modal-lg">
@@ -250,7 +277,7 @@ const student = ({ user, setUser }) => {
             className="btn btn-primary"
             data-bs-toggle="modal"
             data-bs-target="#myModal"
-            onClick={(getAddItem, clearAll)}
+            onClick={getAddItem}
           >
             <i className="fa-solid fa-plus">
               <br />
