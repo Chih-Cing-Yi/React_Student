@@ -8,7 +8,7 @@ class AuthService {
   }
   //登出
   logout() {
-    localStorage.removeItem("user");
+    sessionStorage.removeItem("user");
   }
   //註冊
   register(userName, userPassword) {
@@ -16,13 +16,13 @@ class AuthService {
   }
   //讀取本地資料
   getUser() {
-    return JSON.parse(localStorage.getItem("user"));
+    return JSON.parse(sessionStorage.getItem("user"));
   }
 
   //取得驗證token
   token() {
-    if (localStorage.getItem("user")) {
-      return JSON.parse(localStorage.getItem("user")).jwt;
+    if (sessionStorage.getItem("user")) {
+      return JSON.parse(sessionStorage.getItem("user")).jwt;
     } else {
       return "";
     }

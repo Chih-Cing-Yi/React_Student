@@ -19,7 +19,7 @@ const login = ({ user, setUser }) => {
   const loginUser = async () => {
     try {
       let response = await AuthService.login(userName, userPassword);
-      localStorage.setItem("user", JSON.stringify(response.data));
+      sessionStorage.setItem("user", JSON.stringify(response.data));
       window.alert("登入成功，將導向到首頁");
       setUser(AuthService.getUser());
       navigate("/");
